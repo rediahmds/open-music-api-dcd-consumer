@@ -1,0 +1,31 @@
+{
+  "name": "open-music-api-dcd-consumer",
+  "version": "1.0.0",
+  "description": "Consumer App in OpenMusic API project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rediahmds/open-music-api-dcd-consumer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rediahmds/open-music-api-dcd-consumer/issues"
+  },
+  "homepage": "https://github.com/rediahmds/open-music-api-dcd-consumer#readme",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.3.1",
+    "nodemailer": "^6.9.4",
+    "pg": "^8.11.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0"
+  }
+}
