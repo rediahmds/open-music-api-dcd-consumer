@@ -1,0 +1,22 @@
+const amqp = require('amqplib');
+const PlaylistsService = require('./PlaylistsService');
+const MailSender = require('./MailSender');
+const Listener = require('./Listener');
+
+const init = async () => {
+  const playlistsService = new PlaylistsService();
+  const mailSender = new MailSender();
+  const listener = new Listener();
+
+  const connection = await amqp.connect(process.env.RABBITMQ_SERVER);
+  const channel = await connection.createChannel();
+
+  // TODO: Rename the queue
+  await channel.assertQueue('export:playlist', {
+    durable: true,
+  });
+
+  channel.consume('export:playlist', listener.listen, { noAck: true });
+};
+
+init();
