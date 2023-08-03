@@ -11,6 +11,14 @@
   "rules": {
     "linebreak-style": ["error", "windows"],
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
-    "no-tabs": ["error", { "allowIndentationTabs": true }]
+    "no-tabs": ["error", { "allowIndentationTabs": true }],
+    "comma-dangle": [
+      "error",
+      {
+        "functions": "never",
+        "objects": "always-multiline",
+        "arrays": "always-multiline"
+      }
+    ],
   }
 }
