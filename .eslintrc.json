@@ -19,6 +19,6 @@
         "objects": "always-multiline",
         "arrays": "always-multiline"
       }
-    ],
+    ]
   }
 }
