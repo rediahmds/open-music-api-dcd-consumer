@@ -1,4 +1,5 @@
 const amqp = require('amqplib');
+const config = require('./utils/config');
 const PlaylistsService = require('./PlaylistsService');
 const TracksService = require('./TracksService');
 const MailSender = require('./MailSender');
@@ -10,7 +11,7 @@ const init = async () => {
   const mailSender = new MailSender();
   const listener = new Listener(playlistsService, tracksService, mailSender);
 
-  const connection = await amqp.connect(process.env.RABBITMQ_SERVER);
+  const connection = await amqp.connect(config.rabbitMq.server);
   const channel = await connection.createChannel();
 
   await channel.assertQueue('export:playlists', {
